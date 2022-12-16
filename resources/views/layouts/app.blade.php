@@ -12,7 +12,7 @@
         <a href="/" class="site-title">ミニブログ</a>
     </header>
     <main class="container">
-        @yield('content')  //コンテンツを入れる場所
+        @yield('content')
     </main>
     <footer>
         &copy; Laravel8 入門から開発実践まで
