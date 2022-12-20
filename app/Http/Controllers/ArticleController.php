@@ -30,9 +30,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $article = new Article();
-        $data = ['article' => $article];
-        return view('articles.create', $data);
+        $article = new Article();   //タイトル、本文をArticleクラスのプロパティに入れていく、その入れ物としてArticleインスタンスを用意する
+        $data = ['article' => $article];  //連想配列にする
+        return view('articles.create', $data); //連想配列をビューに渡す
     }
 
     /**
@@ -43,6 +43,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)  //入力された記事を保存
     {
+        //バリデーション  https://laravel.com/docs/8.x/validation#rule-required
         $this->validate($request, [
             'title' => 'required|max:255',
             'body' => 'required'
